@@ -13,20 +13,20 @@ window.addEventListener('DOMContentLoaded', function(e) {
 		btnCloseWindow 		= document.querySelectorAll('.btn-close-window'),
 		btnSignInUp 		= document.querySelectorAll('.btn-sign-in-up');
 
-	btnOverlay.addEventListener('click', function(e) {
-		if (e.target && e.target.classList.contains('btn-sign-in-up')) {
-			let target = e.target;
+	btnOverlay.addEventListener('click', function(e) { // используем делегирование для этого задаем родителю кнопок событие
+		if (e.target && e.target.classList.contains('btn-sign-in-up')) { // проверяем по условию что юзур нажмёт именно на кнопки
+			let target = e.target; // создаем переменную и записоваем в нею ту кнопку на которую нажали 
 
-			for (let i = 0; i < btnSignInUp.length; i++) {
-				if (target == btnSignInUp[i]) {
-					form.forEach(function(i) {
+			for (let i = 0; i < btnSignInUp.length; i++) { // перебираем масив с кнопками дабы в будущем связать их  кнопками 
+				if (target == btnSignInUp[i]) { // проверяем равна ли кнопка на которую нажали с темы которые в массиве
+					form.forEach(function(i) { // перебираем масив с формой и удаляем класс active-modal 
 						i.classList.remove('active-modal');
 					});
 
-					form[i].classList.add('active-modal');
+					form[i].classList.add('active-modal'); // добавляем класс active-modal 
 
 					setTimeout(function() {
-						form[i].style.opacity = "1";
+						form[i].style.opacity = "1"; // делаем задержку в 301 мс 
 					}, 301);
 				}
 			}
