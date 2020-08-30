@@ -5,6 +5,15 @@
 
 
 	.page {
+		.header {
+			.overlay-header {
+				.form-sign {
+					top: 20%;
+				    left: 34%;
+				}
+			}
+		}
+
 		.advantages {
 			bottom: -20%;
 
@@ -43,6 +52,14 @@
 
 @media(max-width: 900px) {
 	.page {
+		.header {
+			.overlay-header {
+				.form-sign {
+					left: 28%;
+				}
+			}
+		}
+
 		.advantages {
 			bottom: -30%;
 
@@ -137,7 +154,17 @@
 					flex-direction: column;
 
 					.menu {
-						display: none;
+						.btn-overlay {
+							padding-top: 20px;
+						}
+
+						span {
+							display: none;
+						}
+
+						a {
+							display: none;
+						}
 					}
 				}
 
@@ -145,6 +172,12 @@
 					.main-title {
 						font-size: 50px;
 					}
+				}
+			
+				.form-sign {
+					width: 260px;
+					left: 10px;
+					right: 10px;
 				}
 			}
 		}

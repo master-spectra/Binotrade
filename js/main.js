@@ -5,9 +5,41 @@ window.addEventListener('DOMContentLoaded', function(e) {
 	
 	// Добавляем нужные переменные 
 	let 
-		tabList 	= document.querySelector('.header-deposit'), 
-		tab 		= document.querySelectorAll('.tab'),
-		tabContent 	= document.querySelectorAll('.tab-content');
+		tabList 			= document.querySelector('.header-deposit'), 
+		tab 				= document.querySelectorAll('.tab'),
+		tabContent 			= document.querySelectorAll('.tab-content'),
+		btnOverlay 			= document.querySelector('.btn-overlay'),
+		form 				= document.querySelectorAll('.form-sign'),
+		btnCloseWindow 		= document.querySelectorAll('.btn-close-window'),
+		btnSignInUp 		= document.querySelectorAll('.btn-sign-in-up');
+
+	btnOverlay.addEventListener('click', function(e) {
+		if (e.target && e.target.classList.contains('btn-sign-in-up')) {
+			let target = e.target;
+
+			for (let i = 0; i < btnSignInUp.length; i++) {
+				if (target == btnSignInUp[i]) {
+					form.forEach(function(i) {
+						i.classList.remove('active-modal');
+					});
+
+					form[i].classList.add('active-modal');
+
+					setTimeout(function() {
+						form[i].style.opacity = "1";
+					}, 301);
+				}
+			}
+		}
+	});
+
+	btnCloseWindow.forEach(function(item) {
+		item.addEventListener('click', function() {
+			form.forEach(function(elem) {
+				elem.classList.remove('active-modal');
+			});
+		});
+	});
 
 	tabList.addEventListener('click', function(e) {
 		if (e.target && e.target.classList.contains('tab')) {
