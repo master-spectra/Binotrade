@@ -1,46 +1,27 @@
-'use strict';
-// Добавляем нужные переменные 
-let 
-	tabList 	= document.querySelector('.header-deposit'), 
-	tab 		= document.querySelectorAll('.tab'),
-	tabContent 	= document.querySelectorAll('.tab-content');
-
-tabList.addEventListener('click', function(e) {
-	e.preventDefault(); // отключаем не нужные действия браузера
-});
-
-tab[0].addEventListener('click', function() {
-	tabContent[0].classList.add('active'); // добавляем класс active 
+window.addEventListener('DOMContentLoaded', function(e) {
+	'use strict';
 	
-	// удаляем класс active
-	tabContent[1].classList.remove('active');
-	tabContent[2].classList.remove('active');
-	tabContent[3].classList.remove('active');
-});
+	// Добавляем нужные переменные 
+	let 
+		tabList 	= document.querySelector('.header-deposit'), 
+		tab 		= document.querySelectorAll('.tab'),
+		tabContent 	= document.querySelectorAll('.tab-content');
 
-tab[1].addEventListener('click', function() {
-	tabContent[1].classList.add('active'); // добавляем класс active 
-	
-	// удаляем класс active
-	tabContent[0].classList.remove('active');
-	tabContent[2].classList.remove('active');
-	tabContent[3].classList.remove('active');
-});
+	tabList.addEventListener('click', function(e) {
+		if (e.target && e.target.classList.contains('tab')) {
+			let target = e.target;
 
-tab[2].addEventListener('click', function() {
-	tabContent[2].classList.add('active'); // добавляем класс active 
-	
-	// удаляем класс active
-	tabContent[0].classList.remove('active');
-	tabContent[1].classList.remove('active');
-	tabContent[3].classList.remove('active');
-});
+			e.preventDefault(); // отключаем не нужные действия браузера
 
-tab[3].addEventListener('click', function() {
-	tabContent[3].classList.add('active'); // добавляем класс active 
-	
-	// удаляем класс active
-	tabContent[0].classList.remove('active');
-	tabContent[1].classList.remove('active');
-	tabContent[2].classList.remove('active');
+			for (let i = 0; i < tab.length; i++) { // создаем цикл который будет перебирать все табы 
+				if (target == tab[i]) {
+					tabContent.forEach(function(item) {
+						item.classList.remove('active'); // перебираем через ForEach все таб-контенты и удаляем класс active  
+					});
+
+					tabContent[i].classList.add('active'); // и добавляем определенному таб-контенту class active 
+				}
+			} 
+		}
+	});
 });
