@@ -1,8 +1,9 @@
-.wrapper {
-	padding: 0 15px;
-}
-
 @media(max-width: 1200px) {
+	.wrapper {
+		padding: 0 15px;
+	}
+
+
 	.page {
 		.header {
 			overflow: hidden !important;
@@ -136,6 +137,97 @@
 							width: 17%;
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.page {
+		.header {
+		    height: auto;
+    		padding-bottom: 20px;
+
+			.overlay-header {
+				.top-header {
+					flex-direction: column;
+
+					.menu {
+						display: none;
+					}
+				}
+
+				.down-header {
+					.main-title {
+						font-size: 50px;
+					}
+				}
+			}
+		}
+
+		.advantages {
+			display: none;
+		}
+	
+		.deposit {
+			.tab-conteiner {
+				.tab-content {	
+					.description {
+						width: 100%;
+					}
+
+					img {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.brands {
+			.overlay-brands {
+				img {
+					display: none;
+				}
+			}
+		}
+
+		.mobile-app {
+			.overlay-mobile-app {
+				.description {
+					width: 100%;
+					
+					.sub-title {
+						font-size: 18px;
+					}
+				}
+
+				img {
+					display: none;
+				}
+			}
+		}
+
+		.about {
+			.overlay-about {
+				.description {
+					flex-direction: column;
+
+					p {
+						width: 100%;
+						padding-bottom: 20px;
+					}
+				}
+			}
+		}
+
+		.footer {
+			.overlay-footer {
+				flex-direction: column;
+
+				.info {
+					width: 100%;
+					padding-bottom: 20px;
 				}
 			}
 		}
