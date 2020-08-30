@@ -33,10 +33,10 @@ window.addEventListener('DOMContentLoaded', function(e) {
 		}
 	});
 
-	btnCloseWindow.forEach(function(item) {
-		item.addEventListener('click', function() {
-			form.forEach(function(elem) {
-				elem.classList.remove('active-modal');
+	btnCloseWindow.forEach(function(item) { // перебераем массив с кнопкам закрыть окно 
+		item.addEventListener('click', function() { // каждой кнопке задаем событие  
+			form.forEach(function(elem) { // перебираем массив с формой
+				elem.classList.remove('active-modal'); // удаляем класс active-modal
 			});
 		});
 	});
