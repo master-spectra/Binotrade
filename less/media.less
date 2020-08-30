@@ -4,7 +4,12 @@
 
 @media(max-width: 1200px) {
 	.page {
+		.header {
+			overflow: hidden !important;
+		}
+
 		.advantages {
+			overflow: hidden !important;
 			bottom: -20%;
 
 			.cards {
@@ -17,6 +22,8 @@
 		}
 
 		.deposit {
+			overflow: hidden !important;
+
 			.header-deposit {
 				.tab {
 				    padding: 0 4px;
@@ -24,11 +31,106 @@
 			}
 		}
 
+		.mobile-app {
+			overflow: hidden !important;
+		}
+
+		.about {
+			overflow: hidden !important;
+		}
+
 		.footer {
+			overflow: hidden !important;
+
 			.overlay-footer {
 			    align-items: flex-start;
-				
+
 				.info {
+					.social {
+						img {
+							width: 25%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media(max-width: 900px) {
+	.page {
+		.advantages {
+			bottom: -30%;
+
+			.cards {
+				.card {
+					span {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+
+		.deposit {
+			.header-deposit {
+				text-align: center;
+			
+				.tab {
+					display: block;
+					padding: 10px 0;
+				}
+			}
+
+			.tab-conteiner {
+				.tab-content {
+					.description {
+						.sub-title {
+							font-size: 16px;
+						}
+					}
+
+					img {
+						width: 45%;
+					}
+				}
+			}
+		}
+
+		.brands {
+			.overlay-brands {
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+		.mobile-app {
+			.overlay-mobile-app {
+				.description {
+					.sub-title {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+
+		.about {
+			.overlay-about {
+				.description {
+					p {
+						font-size: 17px;
+					}
+				}
+			}
+		}
+
+		.footer {
+			.overlay-footer {
+				flex-wrap: wrap;
+
+				.info {
+					width: 30%;
+
 					.social {
 						img {
 							width: 17%;
